@@ -1,0 +1,22 @@
+# Table of contents. Learn more at https://jupyterbook.org/customize/toc.html
+format: jb-book
+root: intro
+parts:
+  - chapters:
+    - file: workbook/0_usage
+
+  - caption: General
+    numbered: false 
+    chapters:
+    - file: workbook/2-2_quiver_demo
+
+  - caption: Initial value problems
+    numbered: false 
+    chapters:
+    - file: workbook/11-1_Eulers_method_demo
+    - file: workbook/11-2_user_functions_demo
+
+  - caption: Tutorials
+    numbered: false
+    chapters:
+    - file: tutorials/1_fund-python_blank
