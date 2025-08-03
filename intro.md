@@ -14,7 +14,7 @@ Please fill out [this anonymous form](https://forms.gle/XVnLFdrB2U7gUMNW6) (requ
 It is **not** currently being used in any class and things may break at any time.
 ```
 
-This Jupyter Book contains a series of Python exercises aimed at introducing you to scientific computing in the context of [CME 102: Ordinary Differential Equations for Engineers](https://explorecourses.stanford.edu/search?q=cme102+laplace) at [Stanford University](https://www.stanford.edu/).
+This Jupyter Book contains a series of Python exercises aimed at introducing you to scientific computing in the context of [CME 102: Ordinary Differential Equations for Engineers](https://explorecourses.stanford.edu/search?q=cme102+laplace) at Stanford University.
 The exercises are adapted by [Enze Chen](https://mse.stanford.edu/people/enze-chen), Lecturer in [Materials Science and Engineering](https://mse.stanford.edu/), from the MATLAB exercises created by [Hung Le](https://icme.stanford.edu/people/hung-le), Lecturer in the Institute for Computational and Mathematical Engineering.
 We hope you will find these exercises useful for your studies!
 
@@ -22,7 +22,7 @@ We hope you will find these exercises useful for your studies!
 ```{admonition} Important note for students
 :class: note
 These pages only have Python, corresponding to the original MATLAB exercises in the course.
-If you're looking for the MATLAB exercises, see the course reader and other documents.
+If you're looking for the MATLAB exercises, please see the course reader and other documents.
 ```
 
 
@@ -33,6 +33,12 @@ If you're looking for the MATLAB exercises, see the course reader and other docu
 
 Nothing! Unlike the MATLAB exercises, we'll be doing everything in the cloud. 
 If you like the sound of this, keep reading the [](workbook/0_usage.ipynb) for instructions on how to complete and submit your work.
+
+
+### What if I want to use Python for a homework problem?
+
+If you choose to use Python on the homework, you can start with our [homework template](./tutorials/homework_template).
+This avoids the hassle of managing your local installation and uses the same Google Colab UI as all the examples.
 
 
 ### Does it matter which language I learn?
