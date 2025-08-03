@@ -62,6 +62,6 @@ def scrub_folder(dirname):
 
 
 if __name__ == '__main__':
-    scrub_folder(os.path.join("cme104-python", "workbook"))
-    scrub_folder(os.path.join("cme104-python", "tutorials"))
+    scrub_folder(os.path.join("cme102-python", "workbook"))
+    scrub_folder(os.path.join("cme102-python", "tutorials"))
 
