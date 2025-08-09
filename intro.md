@@ -9,10 +9,6 @@ Please fill out [this anonymous form](https://forms.gle/XVnLFdrB2U7gUMNW6) (requ
 ```
 ````
 
-```{admonition} This book is a work in progress
-:class: warning
-It is **not** currently being used in any class and things may break at any time.
-```
 
 This Jupyter Book contains a series of Python exercises aimed at introducing you to scientific computing in the context of [CME 102: Ordinary Differential Equations for Engineers](https://explorecourses.stanford.edu/search?q=cme102+laplace) at Stanford University.
 The exercises are adapted by [Enze Chen](https://mse.stanford.edu/people/enze-chen), Lecturer in [Materials Science and Engineering](https://mse.stanford.edu/), from the MATLAB exercises created by [Hung Le](https://icme.stanford.edu/people/hung-le), Lecturer in the Institute for Computational and Mathematical Engineering.
@@ -55,6 +51,11 @@ That's OK!
 We prepared a {doc}`tutorials/1_fund-python_blank` notebook that scaffolds some introductory Python exercises, and you can also find the entire [CME 100 Python workbook](https://enze-chen.github.io/cme100-python/intro.html) online.
 However, it's likely that by the time you're taking this course, you will have already seen many examples in your other work that can transfer to these Python-based calculations.
 
+
+<!-- ```{admonition} This book is a work in progress
+:class: warning
+It is **not** currently being used in any class and things may break at any time.
+``` -->
 
 <!-- ## Table of contents
 

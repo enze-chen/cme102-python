@@ -15,6 +15,25 @@ parts:
     chapters:
     - file: workbook/11-1_Eulers_method_demo
     - file: workbook/11-2_user_functions_demo
+    - file: workbook/11-3_logistic_function_demo
+    - file: workbook/11-4_backward_euler_demo
+    - file: workbook/11-5_global_error_demo
+    - file: workbook/11-7_heun_demo
+    - file: workbook/11-8_runge-kutta_demo
+    - file: workbook/11-9_built-in_demo
+      title: "Example 11-9: Built-in solvers"
+    - file: workbook/11-10_RK_system_demo
+    - file: workbook/11-11_higher_order_demo
+    - file: workbook/11-12_system_second_demo
+    - file: workbook/11-13_nonlinear_system_demo
+
+  - caption: Boundary value problems
+    numbered: false 
+    chapters:
+    - file: workbook/12-1_dirichlet_demo
+    - file: workbook/12-2_neumann_demo
+    - file: workbook/12-4_var_coeff_demo
+    - file: workbook/12-5_shooting_demo
 
   - caption: Tutorials
     numbered: false
