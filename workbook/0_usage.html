@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -193,6 +193,23 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="11-1_Eulers_method_demo.html">Example 11-1: Euler’s method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="11-2_user_functions_demo.html">Example 11-2: User-defined functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-3_logistic_function_demo.html">Example 11-3: Logistic function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-4_backward_euler_demo.html">Example 11-4: Backward Euler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-5_global_error_demo.html">Example 11-5: Global error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-7_heun_demo.html">Example 11-7: Heun’s method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-8_runge-kutta_demo.html">Example 11-8: Higher-order Runge-Kutta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-9_built-in_demo.html">Example 11-9: Built-in solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-10_RK_system_demo.html">Example 11-10: Runge-Kutta for a system of ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-11_higher_order_demo.html">Example 11-11: Higher-order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-12_system_second_demo.html">Example 11-12: System of 2nd-order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-13_nonlinear_system_demo.html">Example 11-13: Non-linear system of ODEs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Boundary value problems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="12-1_dirichlet_demo.html">Example 12-1: Dirichlet boundary conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-2_neumann_demo.html">Example 12-2: Neumann boundary conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-4_var_coeff_demo.html">Example 12-4: ODE with non-constant coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-5_shooting_demo.html">Example 12-5: Shooting method</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
@@ -428,12 +445,7 @@ Here, we will take a moment to explain the user interface to help you get the mo
 <section id="navigating-the-book">
 <h2>Navigating the book<a class="headerlink" href="#navigating-the-book" title="Link to this heading">#</a></h2>
 <p>For the most part, you can use the navigation panel on the left to jump quickly to the exercise you’re interested in.
-Each top-level header contains some explanations and a code demo, and nested underneath (click the down chevron <span class="fa fa-chevron-down"></span>), is a <strong>“Your turn” notebook for you to complete and submit</strong>.</p>
-<!-- ````{margin}
-```{tip}
-Even though there's no Jupyter Book for your homework, you can always create a new Colab notebook (from Google Drive) and write Python code there to solve your problems!
-```
-```` -->
+Each top-level header contains some explanations and example code.</p>
 <p>Note that ordinarily, to run Python on your computer requires installing a Python interpreter, a bunch of extra packages, and a text editor or an integrated development environment (IDE) to work in.
 This can be complicated, so instead we’re going to run everything in the cloud using <a class="reference external" href="https://colab.google/">Google Colaboratory (Colab)</a>!</p>
 </section>

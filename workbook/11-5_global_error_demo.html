@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Example 2-2: Quiver plots &#8212; CME 102 Python Workbook</title>
+    <title>Example 11-5: Global error &#8212; CME 102 Python Workbook</title>
   
   
   
@@ -59,14 +59,14 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'workbook/1_quiver_demo';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workbook/11-5_global_error_demo';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <link rel="canonical" href="https://enze-chen.github.io/cme102-python/workbook/1_quiver_demo.html" />
+    <link rel="canonical" href="https://enze-chen.github.io/cme102-python/workbook/11-5_global_error_demo.html" />
     <link rel="icon" href="../_static/stanford-s.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Python fundamentals" href="../tutorials/1_fund-python_blank.html" />
-    <link rel="prev" title="Usage tips" href="0_usage.html" />
+    <link rel="next" title="Example 11-7: Heun’s method" href="11-7_heun_demo.html" />
+    <link rel="prev" title="Example 11-4: Backward Euler" href="11-4_backward_euler_demo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -188,12 +188,35 @@
 <li class="toctree-l1"><a class="reference internal" href="0_usage.html">Usage tips</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">General</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="2-2_quiver_demo.html">Example 2-2: Quiver plots</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Initial value problems</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Example 2-2: Quiver plots</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-1_Eulers_method_demo.html">Example 11-1: Euler’s method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-2_user_functions_demo.html">Example 11-2: User-defined functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-3_logistic_function_demo.html">Example 11-3: Logistic function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-4_backward_euler_demo.html">Example 11-4: Backward Euler</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Example 11-5: Global error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-7_heun_demo.html">Example 11-7: Heun’s method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-8_runge-kutta_demo.html">Example 11-8: Higher-order Runge-Kutta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-9_built-in_demo.html">Example 11-9: Built-in solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-10_RK_system_demo.html">Example 11-10: Runge-Kutta for a system of ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-11_higher_order_demo.html">Example 11-11: Higher-order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-12_system_second_demo.html">Example 11-12: System of 2nd-order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-13_nonlinear_system_demo.html">Example 11-13: Non-linear system of ODEs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Boundary value problems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="12-1_dirichlet_demo.html">Example 12-1: Dirichlet boundary conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-2_neumann_demo.html">Example 12-2: Neumann boundary conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-4_var_coeff_demo.html">Example 12-4: ODE with non-constant coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-5_shooting_demo.html">Example 12-5: Shooting method</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/1_fund-python_blank.html">Python fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/homework_template.html">Homework template</a></li>
 </ul>
 
     </div>
@@ -248,7 +271,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/enze-chen/cme102-python/blob/main/workbook/1_quiver_demo.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/enze-chen/cme102-python/blob/main/workbook/11-5_global_error_demo.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -268,7 +291,7 @@
 
 
 
-<a href="https://github.com/enze-chen/cme102-python/issues/new?title=Issue%20on%20page%20%2Fworkbook/1_quiver_demo.html&body=Your%20issue%20content%20here." target="_blank"
+<a href="https://github.com/enze-chen/cme102-python/issues/new?title=Issue%20on%20page%20%2Fworkbook/11-5_global_error_demo.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button"
    title="Open an issue"
    data-bs-placement="bottom" data-bs-toggle="tooltip"
@@ -294,7 +317,7 @@
       
       
       
-      <li><a href="../_sources/workbook/1_quiver_demo.ipynb" target="_blank"
+      <li><a href="../_sources/workbook/11-5_global_error_demo.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -378,7 +401,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Example 2-2: Quiver plots</h1>
+    <h1>Example 11-5: Global error</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -389,7 +412,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-commands">Summary of commands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demo">Demo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-error">Global error</a></li>
 </ul>
             </nav>
         </div>
@@ -401,90 +424,77 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="example-2-2-quiver-plots">
-<h1>Example 2-2: Quiver plots<a class="headerlink" href="#example-2-2-quiver-plots" title="Link to this heading">#</a></h1>
-<div class="tip admonition">
-<p class="admonition-title">Important!</p>
-<p>If you’re completely new to Python, you may want to go through the exercises in the <a class="reference internal" href="../tutorials/1_fund-python_blank.html"><span class="doc">Python fundamentals</span></a> notebook first!</p>
-</div>
-<p>While the majority of this class will be spent on solving ordinary differential equations (ODEs) analytically and numerically, a key aspect of verifying the correctness of our solution is in plotting it.
-In this example, we will show how to make arrow plots that represent the direction field in a region (you may have seen these plots in the context of vector fields in CME 100).</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="example-11-5-global-error">
+<h1>Example 11-5: Global error<a class="headerlink" href="#example-11-5-global-error" title="Link to this heading">#</a></h1>
+<p>Given the many tools in our toolbox for solving ODEs, it is important to understand their various advantages and disadvantages.
+One way to quantify the accuracy of different algorithms is using the <strong>global error</strong> of the approximation.
+Here we will show how to calculate the global error numerically for Euler’s method.</p>
 <section id="summary-of-commands">
 <h2>Summary of commands<a class="headerlink" href="#summary-of-commands" title="Link to this heading">#</a></h2>
 <p>In this exercise, we will demonstrate the following:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://numpy.org/doc/stable/index.html"><strong>Numpy</strong></a></p>
-<ul>
-<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.linspace.html"><code class="docutils literal notranslate"><span class="pre">np.linspace(start,</span> <span class="pre">stop,</span> <span class="pre">num)</span></code></a> - Returns <code class="docutils literal notranslate"><span class="pre">num</span></code> evenly spaced numbers between <code class="docutils literal notranslate"><span class="pre">start</span></code> and <code class="docutils literal notranslate"><span class="pre">stop</span></code> (inclusive).</p></li>
-<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.meshgrid.html"><code class="docutils literal notranslate"><span class="pre">np.meshgrid(x,</span> <span class="pre">y)</span></code></a> - Create a 2D grid of coordinate values based on 1D <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code> arrays.</p>
-<ul>
-<li><p>The result is two <code class="docutils literal notranslate"><span class="pre">X</span></code> and <code class="docutils literal notranslate"><span class="pre">Y</span></code> <em>2D arrays</em> with the corresponding 1D arrays tiled across the other dimension.</p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.ones.html"><code class="docutils literal notranslate"><span class="pre">np.ones(shape)</span></code></a> - Returns an array of the given shape of all <code class="docutils literal notranslate"><span class="pre">1</span></code>s.</p></li>
-<li><p>Common functions like <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.sqrt.html"><code class="docutils literal notranslate"><span class="pre">np.sqrt(x)</span></code></a> and <a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.exp.html"><code class="docutils literal notranslate"><span class="pre">np.exp(x)</span></code></a> for <span class="math notranslate nohighlight">\(\sqrt{x}\)</span> and <span class="math notranslate nohighlight">\(e^{x}\)</span>, respectively, of an array <code class="docutils literal notranslate"><span class="pre">x</span></code> (element-wise).</p></li>
-</ul>
-</li>
-<li><p><a class="reference external" href="https://matplotlib.org/stable/"><strong>Matplotlib</strong></a></p>
-<ul>
-<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html"><code class="docutils literal notranslate"><span class="pre">plt.subplots()</span></code></a> - Create Figure and Axes objects for plotting. Many possible parameters.</p></li>
-<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.plot.html"><code class="docutils literal notranslate"><span class="pre">ax.plot(x,</span> <span class="pre">y,</span> <span class="pre">...)</span></code></a> - Create a scatter/line plot in 1D, <code class="docutils literal notranslate"><span class="pre">y</span></code> vs. <code class="docutils literal notranslate"><span class="pre">x</span></code>. Many styles possible.</p></li>
-<li><p><a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.axes.Axes.set.html"><code class="docutils literal notranslate"><span class="pre">ax.set(...)</span></code></a> - Set axes <code class="docutils literal notranslate"><span class="pre">xlabel</span></code>, <code class="docutils literal notranslate"><span class="pre">ylabel</span></code>, <code class="docutils literal notranslate"><span class="pre">xlim</span></code>, <code class="docutils literal notranslate"><span class="pre">ylim</span></code>, <code class="docutils literal notranslate"><span class="pre">title</span></code>, etc.</p></li>
-</ul>
-</li>
+<li><p><a class="reference external" href="https://numpy.org/doc/stable/reference/generated/numpy.linalg.norm.html"><code class="docutils literal notranslate"><span class="pre">np.linalg.norm(x)</span></code></a> - Calculate the norm of the array <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p></li>
 </ul>
 </section>
-<section id="demo">
-<h2>Demo<a class="headerlink" href="#demo" title="Link to this heading">#</a></h2>
-<p>We will multiply the following two matrices:</p>
+<section id="global-error">
+<h2>Global error<a class="headerlink" href="#global-error" title="Link to this heading">#</a></h2>
+<p>The global error can be calculated using the following formula:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split} A = \begin{bmatrix} 1 &amp; 2 \\ -1 &amp; 3 \end{bmatrix}, \qquad B = \begin{bmatrix} 1 &amp; 0 &amp; 1 \\ 2 &amp; 1 &amp; 0 \end{bmatrix}. \end{split}\]</div>
-<p>We will determine the size of the resulting matrix, and display the bottom-left element and the second column on the screen.</p>
-<p>Hint: Recall that Python is <code class="docutils literal notranslate"><span class="pre">0</span></code>-indexed!</p>
+\[ \text{global error} = \sqrt{\frac{\sum_{n=1}^{N} |y^{\mathrm{exact}} (t_n) - y^{\mathrm{numerical}} (t_n) |^2}{N} } \]</div>
+<p>While this expression looks complex, it is nothing more than the <a class="reference external" href="https://en.wikipedia.org/wiki/Norm_(mathematics)#Euclidean_norm">Euclidean norm</a> (2-norm or magnitude) of the vector that is the difference between <span class="math notranslate nohighlight">\(y^{\mathrm{exact}}\)</span> and <span class="math notranslate nohighlight">\(y^{\mathrm{numerical}}\)</span>.
+Therefore, we can calculate it very quickly by using routine linear algebra methods.</p>
+<hr class="docutils" />
+<p>Now, consider the same IVP that we saw previously:</p>
+<div class="math notranslate nohighlight">
+\[ y' = -y + 10 \sin(3t), \quad y(0) = 0, \quad 0 \le t \le 2 \]</div>
+<p>The exact solution is <span class="math notranslate nohighlight">\(y = -3 \cos (3t) + \sin (3t) + 3e^{-t}\)</span>.</p>
+<p>We’ll calculate the global error of forward Euler using a step size of <span class="math notranslate nohighlight">\(h = 0.2\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># initial matrices</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import libraries</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
-<span class="n">A</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">]])</span>
-<span class="n">B</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">]])</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
 
-<span class="c1"># calculate and display their product</span>
-<span class="n">C</span> <span class="o">=</span> <span class="n">A</span> <span class="o">@</span> <span class="n">B</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Product of A * B:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
+<span class="c1"># user-defined function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">myODE</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+    <span class="k">return</span> <span class="o">-</span><span class="n">y</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
 
-<span class="c1"># calculate the size of the new matrix</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The size of matrix C:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">()</span>
+<span class="c1"># Euler&#39;s method function</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">my_euler</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">tf</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">h</span><span class="p">):</span>
+    <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">tf</span><span class="o">+</span><span class="n">h</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">y0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+        <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">h</span> <span class="o">*</span> <span class="n">f</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]))</span>
+    <span class="k">return</span> <span class="n">t</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
 
-<span class="c1"># display bottom-left element and second column</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bottom-left element of C:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
-<span class="nb">print</span><span class="p">()</span>
+<span class="c1"># initialize</span>
+<span class="n">h</span> <span class="o">=</span> <span class="mf">0.2</span>
+<span class="n">t0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">tf</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">y0</span> <span class="o">=</span> <span class="mi">0</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Second column of C:&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">C</span><span class="p">[:,</span><span class="mi">1</span><span class="p">])</span>
+<span class="c1"># forward Euler</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">y_euler</span> <span class="o">=</span> <span class="n">my_euler</span><span class="p">(</span><span class="n">myODE</span><span class="p">,</span> <span class="n">t0</span><span class="p">,</span> <span class="n">tf</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="n">y_exact</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">)</span>
+
+<span class="c1"># compute global error using norm - very fast!</span>
+<span class="n">err_global</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linalg</span><span class="o">.</span><span class="n">norm</span><span class="p">(</span><span class="n">y_euler</span> <span class="o">-</span> <span class="n">y_exact</span><span class="p">)</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;The global error is εG = </span><span class="si">{</span><span class="n">err_global</span><span class="si">:</span><span class="s2">.5f</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Product of A * B:
-[[ 5  2  1]
- [ 5  3 -1]]
-
-The size of matrix C:
-(2, 3)
-
-Bottom-left element of C:
-5
-
-Second column of C:
-[2 3]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The global error is εG = 0.59359
 </pre></div>
 </div>
 </div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>What’s going on in the last line??
+That is special syntax for <strong>f-strings</strong>, or <a class="reference external" href="https://www.pythontutorial.net/python-basics/python-f-strings/">formatted string literals</a>, one of the coolest features of Python.
+It is like a regular string, but everything inside the curly braces <code class="docutils literal notranslate"><span class="pre">{}</span></code> is evaluated on-the-fly, allowing you to insert variables and even functions dynamically into strings.
+Here we insert the global error and ask it to round the decimal (<code class="docutils literal notranslate"><span class="pre">float</span></code>) to 5 places.</p>
 </div>
 </section>
 </section>
@@ -520,20 +530,20 @@ Second column of C:
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="0_usage.html"
+       href="11-4_backward_euler_demo.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Usage tips</p>
+        <p class="prev-next-title">Example 11-4: Backward Euler</p>
       </div>
     </a>
     <a class="right-next"
-       href="../tutorials/1_fund-python_blank.html"
+       href="11-7_heun_demo.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python fundamentals</p>
+        <p class="prev-next-title">Example 11-7: Heun’s method</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -554,7 +564,7 @@ Second column of C:
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-commands">Summary of commands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#demo">Demo</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#global-error">Global error</a></li>
 </ul>
   </nav></div>
 

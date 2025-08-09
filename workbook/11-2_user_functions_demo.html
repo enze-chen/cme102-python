@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -65,7 +65,7 @@
     <link rel="icon" href="../_static/stanford-s.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Python fundamentals" href="../tutorials/1_fund-python_blank.html" />
+    <link rel="next" title="Example 11-3: Logistic function" href="11-3_logistic_function_demo.html" />
     <link rel="prev" title="Example 11-1: Euler’s method" href="11-1_Eulers_method_demo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -195,6 +195,23 @@
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="11-1_Eulers_method_demo.html">Example 11-1: Euler’s method</a></li>
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Example 11-2: User-defined functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-3_logistic_function_demo.html">Example 11-3: Logistic function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-4_backward_euler_demo.html">Example 11-4: Backward Euler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-5_global_error_demo.html">Example 11-5: Global error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-7_heun_demo.html">Example 11-7: Heun’s method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-8_runge-kutta_demo.html">Example 11-8: Higher-order Runge-Kutta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-9_built-in_demo.html">Example 11-9: Built-in solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-10_RK_system_demo.html">Example 11-10: Runge-Kutta for a system of ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-11_higher_order_demo.html">Example 11-11: Higher-order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-12_system_second_demo.html">Example 11-12: System of 2nd-order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-13_nonlinear_system_demo.html">Example 11-13: Non-linear system of ODEs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Boundary value problems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="12-1_dirichlet_demo.html">Example 12-1: Dirichlet boundary conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-2_neumann_demo.html">Example 12-2: Neumann boundary conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-4_var_coeff_demo.html">Example 12-4: ODE with non-constant coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-5_shooting_demo.html">Example 12-5: Shooting method</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
@@ -426,7 +443,7 @@ You will often have to write your own functions when programming and you’ll ha
 <h2>Summary of commands<a class="headerlink" href="#summary-of-commands" title="Link to this heading">#</a></h2>
 <p>In this exercise, we will demonstrate the following:</p>
 <ul class="simple">
-<li><p>Writing our own function in Python!</p></li>
+<li><p>Writing our own function in Python.</p></li>
 </ul>
 </section>
 <section id="eulers-method-with-custom-function">
@@ -450,10 +467,10 @@ You will often have to write your own functions when programming and you’ll ha
 <ul class="simple">
 <li><p>The <code class="docutils literal notranslate"><span class="pre">def</span></code> at the start is required, as is the colon at the end of the first line.</p></li>
 <li><p>Just like variables, function names should be descriptive.</p></li>
-<li><p>Arguments are optional, but you’ll probably have some input variables.</p></li>
+<li><p>Arguments are optional, but you should have some input variables.</p></li>
 <li><p>Docstrings are optional but very nice to have (for others and future you). No need though if the function is very simple.</p></li>
 <li><p>Variables defined in the function body (including arguments) have local scope, i.e., they don’t exist outside the function.</p></li>
-<li><p>Returning a value is generally optional, but you’ll probably have something.</p></li>
+<li><p>Returning a value is generally optional, but you should have the functional expression here.</p></li>
 </ul>
 <p>Once the ODE function is written, we can call it in the loop.</p>
 <div class="cell docutils container">
@@ -482,8 +499,8 @@ You will often have to write your own functions when programming and you’ll ha
 
 <span class="c1"># plot and compare with exact</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;k--o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Euler&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y_exact</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;k--o&#39;</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Euler&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y_exact</span><span class="p">,</span> <span class="n">lw</span><span class="o">=</span><span class="mf">2.5</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">,</span> <span class="n">zorder</span><span class="o">=-</span><span class="mi">5</span><span class="p">)</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$y(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Solution of $y&#39;&#39; = -y + 10 \sin(3t)$&quot;</span><span class="p">,</span>
        <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">tf</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
 <span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
@@ -492,7 +509,7 @@ You will often have to write your own functions when programming and you’ll ha
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a1e91ec3822a9b386dd1be80b8183cacfcd612048f7b18b4d595d07421764f7c.png" src="../_images/a1e91ec3822a9b386dd1be80b8183cacfcd612048f7b18b4d595d07421764f7c.png" />
+<img alt="../_images/52f457af32572cb801df123e7a0151b734e9cee8a72d9a0003d050a053395489.png" src="../_images/52f457af32572cb801df123e7a0151b734e9cee8a72d9a0003d050a053395489.png" />
 </div>
 </div>
 </section>
@@ -539,11 +556,11 @@ You will often have to write your own functions when programming and you’ll ha
       </div>
     </a>
     <a class="right-next"
-       href="../tutorials/1_fund-python_blank.html"
+       href="11-3_logistic_function_demo.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python fundamentals</p>
+        <p class="prev-next-title">Example 11-3: Logistic function</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>

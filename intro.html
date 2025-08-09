@@ -196,6 +196,23 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="workbook/11-1_Eulers_method_demo.html">Example 11-1: Euler’s method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="workbook/11-2_user_functions_demo.html">Example 11-2: User-defined functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workbook/11-3_logistic_function_demo.html">Example 11-3: Logistic function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workbook/11-4_backward_euler_demo.html">Example 11-4: Backward Euler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workbook/11-5_global_error_demo.html">Example 11-5: Global error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workbook/11-7_heun_demo.html">Example 11-7: Heun’s method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workbook/11-8_runge-kutta_demo.html">Example 11-8: Higher-order Runge-Kutta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workbook/11-9_built-in_demo.html">Example 11-9: Built-in solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workbook/11-10_RK_system_demo.html">Example 11-10: Runge-Kutta for a system of ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workbook/11-11_higher_order_demo.html">Example 11-11: Higher-order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workbook/11-12_system_second_demo.html">Example 11-12: System of 2nd-order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workbook/11-13_nonlinear_system_demo.html">Example 11-13: Non-linear system of ODEs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Boundary value problems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="workbook/12-1_dirichlet_demo.html">Example 12-1: Dirichlet boundary conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workbook/12-2_neumann_demo.html">Example 12-2: Neumann boundary conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workbook/12-4_var_coeff_demo.html">Example 12-4: ODE with non-constant coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="workbook/12-5_shooting_demo.html">Example 12-5: Shooting method</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
@@ -393,10 +410,6 @@ This is the first draft and we’d like to hear your feedback.
 Please fill out <a class="reference external" href="https://forms.gle/XVnLFdrB2U7gUMNW6">this anonymous form</a> (requires Stanford login).</p>
 </div>
 </aside>
-<div class="warning admonition">
-<p class="admonition-title">This book is a work in progress</p>
-<p>It is <strong>not</strong> currently being used in any class and things may break at any time.</p>
-</div>
 <p>This Jupyter Book contains a series of Python exercises aimed at introducing you to scientific computing in the context of <a class="reference external" href="https://explorecourses.stanford.edu/search?q=cme102+laplace">CME 102: Ordinary Differential Equations for Engineers</a> at Stanford University.
 The exercises are adapted by <a class="reference external" href="https://mse.stanford.edu/people/enze-chen">Enze Chen</a>, Lecturer in <a class="reference external" href="https://mse.stanford.edu/">Materials Science and Engineering</a>, from the MATLAB exercises created by <a class="reference external" href="https://icme.stanford.edu/people/hung-le">Hung Le</a>, Lecturer in the Institute for Computational and Mathematical Engineering.
 We hope you will find these exercises useful for your studies!</p>
@@ -428,6 +441,10 @@ Sure, certain tasks may be easier in one language than in the other as they were
 <p>That’s OK!
 We prepared a <a class="reference internal" href="tutorials/1_fund-python_blank.html"><span class="doc">Python fundamentals</span></a> notebook that scaffolds some introductory Python exercises, and you can also find the entire <a class="reference external" href="https://enze-chen.github.io/cme100-python/intro.html">CME 100 Python workbook</a> online.
 However, it’s likely that by the time you’re taking this course, you will have already seen many examples in your other work that can transfer to these Python-based calculations.</p>
+<!-- ```{admonition} This book is a work in progress
+:class: warning
+It is **not** currently being used in any class and things may break at any time.
+``` -->
 <!-- ## Table of contents
 
 ```{tableofcontents}
@@ -436,6 +453,8 @@ https://fontawesome.com/search?o=r&s=solid&ip=classic
 -->
 </section>
 </section>
+<div class="toctree-wrapper compound">
+</div>
 <div class="toctree-wrapper compound">
 </div>
 <div class="toctree-wrapper compound">

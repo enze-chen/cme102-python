@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -66,7 +66,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Homework XX, Problem YY" href="homework_template.html" />
-    <link rel="prev" title="Example 11-2: User-defined functions" href="../workbook/11-2_user_functions_demo.html" />
+    <link rel="prev" title="Example 12-5: Shooting method" href="../workbook/12-5_shooting_demo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -195,6 +195,23 @@
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../workbook/11-1_Eulers_method_demo.html">Example 11-1: Euler’s method</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../workbook/11-2_user_functions_demo.html">Example 11-2: User-defined functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workbook/11-3_logistic_function_demo.html">Example 11-3: Logistic function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workbook/11-4_backward_euler_demo.html">Example 11-4: Backward Euler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workbook/11-5_global_error_demo.html">Example 11-5: Global error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workbook/11-7_heun_demo.html">Example 11-7: Heun’s method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workbook/11-8_runge-kutta_demo.html">Example 11-8: Higher-order Runge-Kutta</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workbook/11-9_built-in_demo.html">Example 11-9: Built-in solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workbook/11-10_RK_system_demo.html">Example 11-10: Runge-Kutta for a system of ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workbook/11-11_higher_order_demo.html">Example 11-11: Higher-order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workbook/11-12_system_second_demo.html">Example 11-12: System of 2nd-order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workbook/11-13_nonlinear_system_demo.html">Example 11-13: Non-linear system of ODEs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Boundary value problems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../workbook/12-1_dirichlet_demo.html">Example 12-1: Dirichlet boundary conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workbook/12-2_neumann_demo.html">Example 12-2: Neumann boundary conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workbook/12-4_var_coeff_demo.html">Example 12-4: ODE with non-constant coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../workbook/12-5_shooting_demo.html">Example 12-5: Shooting method</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="current nav bd-sidenav">
@@ -834,7 +851,7 @@ Print odd numbers as they are and print the negative value for even numbers.</p>
 <section id="user-defined-functions">
 <h3>User-defined functions<a class="headerlink" href="#user-defined-functions" title="Link to this heading">#</a></h3>
 <p>Sometimes, writing your own functions can be helpful for solving problems, and we will practice this in the context of numerically solving ODEs.
-In CS 106A and other context, this technique is called decomposition and makes your code more readable, extensible, and often more efficient.</p>
+In CS 106A and other contexts, this technique is called <em>decomposition</em> and makes your code more readable, extensible, and often more efficient.</p>
 <p>In Python, the syntax for defining your own function is:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_func_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot; optional docstring to explain purpose, arguments, etc. &quot;&quot;&quot;</span>
@@ -1321,12 +1338,12 @@ If something is confusing, you can look it up on Google (some popular sites for 
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../workbook/11-2_user_functions_demo.html"
+       href="../workbook/12-5_shooting_demo.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Example 11-2: User-defined functions</p>
+        <p class="prev-next-title">Example 12-5: Shooting method</p>
       </div>
     </a>
     <a class="right-next"

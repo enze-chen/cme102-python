@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Example 11-2: User-defined functions &#8212; CME 102 Python Workbook</title>
+    <title>Example 11-9: Using built-in ODE solvers &#8212; CME 102 Python Workbook</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -59,14 +59,14 @@
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'workbook/11-2_user_functions';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'workbook/11-9_built-in_demo';</script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-    <link rel="canonical" href="https://enze-chen.github.io/cme102-python/workbook/11-2_user_functions.html" />
+    <link rel="canonical" href="https://enze-chen.github.io/cme102-python/workbook/11-9_built-in_demo.html" />
     <link rel="icon" href="../_static/stanford-s.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Python fundamentals" href="../tutorials/1_fund-python_blank.html" />
-    <link rel="prev" title="Example 11-1: Euler’s method" href="11-1_Eulers_method.html" />
+    <link rel="next" title="Example 11-10: Runge-Kutta for a system of ODEs" href="11-10_RK_system_demo.html" />
+    <link rel="prev" title="Example 11-8: Higher-order Runge-Kutta" href="11-8_runge-kutta_demo.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -193,12 +193,30 @@
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Initial value problems</span></p>
 <ul class="current nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="11-1_Eulers_method.html">Example 11-1: Euler’s method</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Example 11-2: User-defined functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-1_Eulers_method_demo.html">Example 11-1: Euler’s method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-2_user_functions_demo.html">Example 11-2: User-defined functions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-3_logistic_function_demo.html">Example 11-3: Logistic function</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-4_backward_euler_demo.html">Example 11-4: Backward Euler</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-5_global_error_demo.html">Example 11-5: Global error</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-7_heun_demo.html">Example 11-7: Heun’s method</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-8_runge-kutta_demo.html">Example 11-8: Higher-order Runge-Kutta</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Example 11-9: Built-in solvers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-10_RK_system_demo.html">Example 11-10: Runge-Kutta for a system of ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-11_higher_order_demo.html">Example 11-11: Higher-order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-12_system_second_demo.html">Example 11-12: System of 2nd-order ODEs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11-13_nonlinear_system_demo.html">Example 11-13: Non-linear system of ODEs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Boundary value problems</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="12-1_dirichlet_demo.html">Example 12-1: Dirichlet boundary conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-2_neumann_demo.html">Example 12-2: Neumann boundary conditions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-4_var_coeff_demo.html">Example 12-4: ODE with non-constant coefficients</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12-5_shooting_demo.html">Example 12-5: Shooting method</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Tutorials</span></p>
 <ul class="nav bd-sidenav">
 <li class="toctree-l1"><a class="reference internal" href="../tutorials/1_fund-python_blank.html">Python fundamentals</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tutorials/homework_template.html">Homework template</a></li>
 </ul>
 
     </div>
@@ -253,7 +271,7 @@
       
       
       
-      <li><a href="https://colab.research.google.com/github/enze-chen/cme102-python/blob/main/workbook/11-2_user_functions.ipynb" target="_blank"
+      <li><a href="https://colab.research.google.com/github/enze-chen/cme102-python/blob/main/workbook/11-9_built-in_demo.ipynb" target="_blank"
    class="btn btn-sm dropdown-item"
    title="Launch on Colab"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -273,7 +291,7 @@
 
 
 
-<a href="https://github.com/enze-chen/cme102-python/issues/new?title=Issue%20on%20page%20%2Fworkbook/11-2_user_functions.html&body=Your%20issue%20content%20here." target="_blank"
+<a href="https://github.com/enze-chen/cme102-python/issues/new?title=Issue%20on%20page%20%2Fworkbook/11-9_built-in_demo.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button"
    title="Open an issue"
    data-bs-placement="bottom" data-bs-toggle="tooltip"
@@ -299,7 +317,7 @@
       
       
       
-      <li><a href="../_sources/workbook/11-2_user_functions.ipynb" target="_blank"
+      <li><a href="../_sources/workbook/11-9_built-in_demo.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -383,7 +401,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Example 11-2: User-defined functions</h1>
+    <h1>Example 11-9: Using built-in ODE solvers</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -394,10 +412,7 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-commands">Summary of commands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eulers-method-with-custom-function">Euler’s method with custom function</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-your-own-function">Writing your own function</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-flame-model-using-solve-ivp">Solving the flame model using <code class="docutils literal notranslate"><span class="pre">solve_ivp()</span></code></a></li>
 </ul>
             </nav>
         </div>
@@ -409,80 +424,81 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="example-11-2-user-defined-functions">
-<h1>Example 11-2: User-defined functions<a class="headerlink" href="#example-11-2-user-defined-functions" title="Link to this heading">#</a></h1>
-<p>We will provide another demonstration of Euler’s method, but this time, we’ll write a custom function for the first derivative.
-You will often have to write your own functions when programming and you’ll have many opportunities to practice doing so in this course.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="example-11-9-using-built-in-ode-solvers">
+<h1>Example 11-9: Using built-in ODE solvers<a class="headerlink" href="#example-11-9-using-built-in-ode-solvers" title="Link to this heading">#</a></h1>
+<p>By now, you should have a good sense of Runge-Kutta methods and the different orders of algorithms for solving ODEs.
+While it is instructive to implement RK methods from scratch, in the real world it is more practical to use a pre-built ODE solver, as those tend to be more robust and efficient.
+In MATLAB, <a class="reference external" href="https://www.mathworks.com/help/matlab/ref/ode45.html"><code class="docutils literal notranslate"><span class="pre">ode45()</span></code></a> is the go-to function, one of those “classic” MATLAB commands.
+In Python, there are several alternatives, and we’ll go with <a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html"><code class="docutils literal notranslate"><span class="pre">solve_ivp()</span></code></a> as a solid choice.</p>
 <section id="summary-of-commands">
 <h2>Summary of commands<a class="headerlink" href="#summary-of-commands" title="Link to this heading">#</a></h2>
-<p>In this exercise, we will demonstrate the following:</p>
+<p><a class="reference external" href="https://docs.scipy.org/doc/scipy/index.html">SciPy</a>: A specialized library for math and science.</p>
 <ul class="simple">
-<li><p>Writing our own function in Python!</p></li>
+<li><p><a class="reference external" href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html"><code class="docutils literal notranslate"><span class="pre">scipy.integrate.solve_ivp(func,</span> <span class="pre">tspan,</span> <span class="pre">y0,</span> <span class="pre">...)</span></code></a> - Solve initial value problems using Runge-Kutta methods.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">func</span></code>: The function handle for the ODE that you want to solve</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tspan</span></code>: The start and end times for the solution.
+The function will automatically choose an appropriate discretization.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">y0</span></code>: The initial value</p></li>
 </ul>
-</section>
-<section id="eulers-method-with-custom-function">
-<h2>Euler’s method with custom function<a class="headerlink" href="#eulers-method-with-custom-function" title="Link to this heading">#</a></h2>
-<p>Consider the following IVP:</p>
-<div class="math notranslate nohighlight">
-\[ y' = -y + 10 \sin(3t), \quad y(0) = 0, \quad 0 \le t \le 2 \]</div>
-<p>The exact solution is <span class="math notranslate nohighlight">\(y = -3 \cos (3t) + \sin (3t) + 3e^{-t}\)</span>.</p>
-<p>We’ll numerically solve this ODE using a step size of <span class="math notranslate nohighlight">\(h = 0.1\)</span>.</p>
-<section id="writing-your-own-function">
-<h3>Writing your own function<a class="headerlink" href="#writing-your-own-function" title="Link to this heading">#</a></h3>
-<p>In Python, the syntax for defining your own function is:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">my_func_name</span><span class="p">(</span><span class="n">arg1</span><span class="p">,</span> <span class="n">arg2</span><span class="p">,</span> <span class="o">...</span><span class="p">):</span>
-<span class="w">    </span><span class="sd">&quot;&quot;&quot; optional docstring to explain purpose, arguments, etc. &quot;&quot;&quot;</span>
-    <span class="n">do</span> <span class="n">something</span>
-    <span class="k">return</span> <span class="n">something</span>   <span class="c1"># optional</span>
+</li>
+</ul>
+<p>Those are the most important parameters, but if you look in the documentation, there are a few others that you may want to consider:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">method</span></code>: The default is <code class="docutils literal notranslate"><span class="pre">RK45</span></code>, which is essentially MATLAB’s <code class="docutils literal notranslate"><span class="pre">ode45()</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">max_step</span></code>: Maximum allowed step size. You may have to set this to get more granular results.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">args</span></code>: If your <code class="docutils literal notranslate"><span class="pre">func</span></code> has extra parameters (e.g., coefficients, constants), then put them here.</p></li>
+</ul>
+<p>The returned result is interesting: It is a collection of different objects which can be accessed as individual fields.
+That is, to extract the time and solution, one might do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">solver</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>      <span class="c1"># solver has many fields</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">y</span>    <span class="c1"># we only grab the ones we need</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>The <code class="docutils literal notranslate"><span class="pre">def</span></code> at the start is required, as is the colon at the end of the first line.</p></li>
-<li><p>Just like variables, function names should be descriptive.</p></li>
-<li><p>Arguments are optional.</p></li>
-<li><p>Docstrings are optional but very nice to have (for others and future you). No need though if the function is very simple.</p></li>
-<li><p>Returning a value is generally optional, but here we want to return the expression for the analytical function.</p></li>
-</ul>
+</section>
+<section id="solving-the-flame-model-using-solve-ivp">
+<h2>Solving the flame model using <code class="docutils literal notranslate"><span class="pre">solve_ivp()</span></code><a class="headerlink" href="#solving-the-flame-model-using-solve-ivp" title="Link to this heading">#</a></h2>
+<p>Recall the flame model ODE presented previously in class:</p>
+<div class="math notranslate nohighlight">
+\[ r'(t) = \alpha \left[ r^2 (t) - r^3 (t) \right]; \quad \alpha = 100; \quad r(0) = 10^{-2}; \quad 0 \le t \le 2 \]</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># import libraries</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">matplotlib.pyplot</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">plt</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">scipy.integrate</span><span class="w"> </span><span class="kn">import</span> <span class="n">solve_ivp</span>   <span class="c1"># note how this is done!</span>
 
-<span class="c1"># user-defined function</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">myODE</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="k">return</span> <span class="o">-</span><span class="n">y</span> <span class="o">+</span> <span class="mi">10</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span>
+<span class="c1"># flame model ODE</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">myODE</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">alpha</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">alpha</span> <span class="o">*</span> <span class="p">(</span><span class="n">y</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">-</span> <span class="n">y</span> <span class="o">**</span> <span class="mi">3</span><span class="p">)</span>
 
-<span class="c1"># initialize</span>
-<span class="n">h</span> <span class="o">=</span> <span class="mf">0.1</span>
+<span class="c1"># constants</span>
 <span class="n">t0</span> <span class="o">=</span> <span class="mi">0</span>
 <span class="n">tf</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">y0</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="n">y</span> <span class="o">=</span> <span class="p">[</span><span class="n">y0</span><span class="p">]</span>
-<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="n">t0</span><span class="p">,</span> <span class="n">tf</span><span class="o">+</span><span class="n">h</span><span class="p">,</span> <span class="n">h</span><span class="p">)</span>
+<span class="n">r0</span> <span class="o">=</span> <span class="mf">1e-2</span>
+<span class="n">alpha</span> <span class="o">=</span> <span class="mi">100</span>
 
-<span class="c1"># Euler for loop and exact solution</span>
-<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-    <span class="n">y</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]</span> <span class="o">+</span> <span class="n">h</span> <span class="o">*</span> <span class="n">myODE</span><span class="p">(</span><span class="n">t</span><span class="p">[</span><span class="n">n</span><span class="p">],</span> <span class="n">y</span><span class="p">[</span><span class="n">n</span><span class="p">]))</span>    <span class="c1"># this is where the function goes!</span>
+<span class="c1"># call solve_ivp() - max_step argument is key!</span>
+<span class="n">solver</span> <span class="o">=</span> <span class="n">solve_ivp</span><span class="p">(</span><span class="n">myODE</span><span class="p">,</span> <span class="p">[</span><span class="n">t0</span><span class="p">,</span> <span class="n">tf</span><span class="p">],</span> <span class="p">[</span><span class="n">r0</span><span class="p">],</span> <span class="n">args</span><span class="o">=</span><span class="p">(</span><span class="n">alpha</span><span class="p">,),</span> <span class="n">max_step</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)</span>
+<span class="n">t</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">t</span><span class="p">,</span> <span class="n">solver</span><span class="o">.</span><span class="n">y</span>
 
-<span class="n">y_exact</span> <span class="o">=</span> <span class="o">-</span><span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">3</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">+</span> <span class="mi">3</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">t</span><span class="p">)</span>
-
-<span class="c1"># plot and compare with exact</span>
+<span class="c1"># plot results</span>
 <span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">()</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="s1">&#39;k--o&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;Euler&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y_exact</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="s1">&#39;exact&#39;</span><span class="p">)</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$y(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="sa">r</span><span class="s2">&quot;Solution of $y&#39;&#39; = -y + 10 \sin(3t)$&quot;</span><span class="p">,</span>
-       <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="n">tf</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">5</span><span class="p">])</span>
-<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">y</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">xlabel</span><span class="o">=</span><span class="s1">&#39;$t$&#39;</span><span class="p">,</span> <span class="n">ylabel</span><span class="o">=</span><span class="s1">&#39;$r(t)$&#39;</span><span class="p">,</span> <span class="n">title</span><span class="o">=</span><span class="s2">&quot;Flame model solution with solve_ivp()&quot;</span><span class="p">,</span>
+       <span class="n">xlim</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">],</span> <span class="n">ylim</span><span class="o">=</span><span class="p">[</span><span class="n">r0</span><span class="p">,</span> <span class="mf">1.4</span><span class="p">])</span>
 <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../_images/a1e91ec3822a9b386dd1be80b8183cacfcd612048f7b18b4d595d07421764f7c.png" src="../_images/a1e91ec3822a9b386dd1be80b8183cacfcd612048f7b18b4d595d07421764f7c.png" />
+<img alt="../_images/dd2bec1356f1eaa80b9d043d9a25cf479205252c83d0036704f07d0d55431761.png" src="../_images/dd2bec1356f1eaa80b9d043d9a25cf479205252c83d0036704f07d0d55431761.png" />
 </div>
 </div>
-</section>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>What happens if you delete the <code class="docutils literal notranslate"><span class="pre">max_step</span></code> argument of <code class="docutils literal notranslate"><span class="pre">solve_ivp()</span></code>?</p>
+</div>
 </section>
 </section>
 
@@ -517,20 +533,20 @@ You will often have to write your own functions when programming and you’ll ha
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="11-1_Eulers_method.html"
+       href="11-8_runge-kutta_demo.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Example 11-1: Euler’s method</p>
+        <p class="prev-next-title">Example 11-8: Higher-order Runge-Kutta</p>
       </div>
     </a>
     <a class="right-next"
-       href="../tutorials/1_fund-python_blank.html"
+       href="11-10_RK_system_demo.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Python fundamentals</p>
+        <p class="prev-next-title">Example 11-10: Runge-Kutta for a system of ODEs</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -551,10 +567,7 @@ You will often have to write your own functions when programming and you’ll ha
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-of-commands">Summary of commands</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eulers-method-with-custom-function">Euler’s method with custom function</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-your-own-function">Writing your own function</a></li>
-</ul>
-</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#solving-the-flame-model-using-solve-ivp">Solving the flame model using <code class="docutils literal notranslate"><span class="pre">solve_ivp()</span></code></a></li>
 </ul>
   </nav></div>
 
