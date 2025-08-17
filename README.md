@@ -11,7 +11,7 @@ Access it through our [Jupyter Book](https://enze-chen.github.io/cme102-python/)
 ## For instructors
 
 Here's what Enze's convoluted process entails (if you don't like it, feel free to use your own):
-1. Clone the repo and ask Enze or Vadim for the solution Python notebooks.
+1. Clone the repo and ask Enze or Hung for the solution Python notebooks.
 1. Move the solution notebooks into their proper folders (workbook or tutorials).
 Files ending in `_solu.ipynb` will be ignored by git.
 1. Anytime you modify the solutions, update the `_blank` notebooks (what is actually compiled in the Jupyter Book) by running from _above_ the root folder: `python cme102-python/assets/make_blank_nb.py`.
