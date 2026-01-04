@@ -21,6 +21,10 @@ These pages only have Python, corresponding to the original MATLAB exercises in 
 If you're looking for the MATLAB exercises, please see the course reader and other documents.
 ```
 
+```{admonition} Before you begin...
+:class: tip
+👉🏼 Please watch this 5-min video tutorial: https://youtu.be/XkO5ojIqOIg 👈🏼
+```
 
 
 ## Other FAQs
